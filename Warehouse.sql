@@ -7,7 +7,8 @@ Building .sql backend to the warehouse */
 CREATE DATABASE warehouse;
 USE warehouse;
 
-/* creating the tables to be used within the warehouse */
+/* creating the tables to be used within the warehouse. 'not null's are used to prevent blank values */
+
 
 CREATE TABLE suppliers (
     supplier_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -85,6 +86,6 @@ BEGIN
     SET stock_quantity = stock_quantity - NEW.quantity
     WHERE product_id = NEW.product_id;
 END
-
+/* using the delimiter to clearly indicate an end and seperate more clearly */
 DELIMITER ;
 
